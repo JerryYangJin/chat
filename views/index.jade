@@ -1,7 +1,43 @@
 extends layout
 
 block content
-  ul#messages
-  form(action='')
-    input#m(autocomplete='off')
-    button Send
+  nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+    div.container
+      div.navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand 7
+      div.navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li
+            a Chat
+        ul.nav.navbar-nav.navbar-right
+          li
+            a Profile
+
+  div.container
+    .row
+      .col-md-8
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title Message
+          .panel-body
+            ul#messages
+            form(role='form')
+              .input-group
+                input#m.form-control(type='text')
+                span.input-group-btn
+                  button.btn.btn-default(type='submit') Send
+      .col-md-4
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title Friends
+          .panel-body
+            ul#friends
+            form(role='form')
+              .input-group
+                span.input-group-btn
+                  button.btn.btn-default(type='button') Add

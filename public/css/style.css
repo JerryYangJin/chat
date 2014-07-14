@@ -1,0 +1,23 @@
+body{
+	padding-top: 70px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+
+#messages{
+	list-style: none;
+	max-height: 400px;
+	overflow-y:scroll;
+	overflow-x:auto;
+	word-wrap: break-word;
+	height: 400px;
+}
+
+#friends{
+	list-style: none;
+	max-height: 400px;
+	overflow-y:scroll;
+	overflow-x:auto;
+	word-wrap: break-word;
+	height: 400px;
+}
