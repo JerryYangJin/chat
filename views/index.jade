@@ -16,9 +16,14 @@ block content
             a Chat
         ul.nav.navbar-nav.navbar-right
           li
-            a Profile
+            a#nav-name nick name not set
 
   div.container
+    .alert.alert-warning.alert-dismissible(role='alert')
+      button.close(type='button', data-dismiss='alert')
+        span(aria-hidden='true') ×
+        span.sr-only Close
+        | please set nick name before sending messages
     .row
       .col-md-8
         .panel.panel-default
@@ -26,9 +31,9 @@ block content
             h3.panel-title Message
           .panel-body
             ul#messages
-            form(role='form')
+            form#mf(role='form')
               .input-group
-                input#m.form-control(type='text')
+                input#m.form-control(type='text', placeholder="Enter your message and hit 'enter' or click 'send'")
                 span.input-group-btn
                   button.btn.btn-default(type='submit') Send
       .col-md-4
@@ -37,7 +42,8 @@ block content
             h3.panel-title Friends
           .panel-body
             ul#friends
-            form(role='form')
+            form#ff(role='form')
               .input-group
+                input#nick.form-control(type='text', placeholder="Enter your nick name here")
                 span.input-group-btn
-                  button.btn.btn-default(type='button') Add
+                  button.btn.btn-default(type='submit') Set Nick Name
