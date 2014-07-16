@@ -4,6 +4,10 @@ $(function(){
     socket.on('chat message', function(msg){
       $('#messages').append($('<li>').text(msg));
     });
+    
+    socket.on('register', function(user){
+      $('#friends').append($('<li>').text(user));
+    });
 
     $('#mf').submit(function(){
       if($('#nick').val()){

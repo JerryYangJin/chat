@@ -20,6 +20,7 @@ io.on('connection', function(socket){
     basket[data.name] = socket.id;
     console.log(data.name + ' enters chat room');
     io.emit('chat message', 'system notification: ' + data.name + ' enters chat room');
+    socket.broadcast.emit('register', data.name);
   });
 
   socket.on('disconnect', function(){
@@ -33,7 +34,7 @@ io.on('connection', function(socket){
     //io.emit('chat message', data.msg);
 
     // sending to all clients except sender
-    io.broadcast.emit('chat message', data.msg);
+    socket.broadcast.emit('chat message', data.name+": "+data.msg);
   });
 
 });
